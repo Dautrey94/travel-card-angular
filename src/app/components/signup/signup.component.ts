@@ -24,17 +24,18 @@ export class SignupComponent implements OnInit {
     this.myAuth
       .signup(this.signUpInfo)
       .then(resultFromApi => {
-        this.signUpInfo = { username: '', password: ''};
+        // Clear Form
+        this.signUpInfo = { username: "", password: ""};
 
-        this.errorMessage = '';
+        // Clear Error Message
+        this.errorMessage = "";
 
-        this.myRouter.navigate([/travelcards]);
+        // Redirect to /something
+        this.myRouter.navigate(['/travelcards']);
       })
-
       .catch(err => {
         const parsedError = err.json();
-        this.errorMessage = parsedError.message + 'error'
+        this.errorMessage = parsedError.message + "error"
       });
-  }
-
+  } // Close doSignup()
 }

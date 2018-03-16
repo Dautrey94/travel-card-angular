@@ -33,23 +33,25 @@ export class LoginComponent implements OnInit {
 
   doLogin() {
     this.myAuthService.login(this.loginInfo)
-    .then((resultFromApi) => {
-      this.loginInfo = {
-        username: '',
-        password: '',
-      };
+      .then((resultFromApi) => {
+          // clear the form
+          this.loginInfo = {
+            username: '',
+            password: ''
+          };
 
-      this.loginErrorMessage = '',
+          // clear the error message
+          this.loginErrorMessage = "";
 
-      this.myRouter.navigate(['/travelcards']);
-    })
+          // redirect to /phones
+          this.myRouter.navigate(['/travelcards']);
+      })
+      .catch((err) => {
+          const parsedError = err.json();
+          this.loginErrorMessage = parsedError.message + ' 😤';
+      });
 
-    .catch((err) => {
-      const parsedError = err.json();
-      this.loginErrorMessage = parsedError.message + 'error';
-    });
-
-    console.log('Successful login')
+      console.log('succesful login')
   }
 
 }
