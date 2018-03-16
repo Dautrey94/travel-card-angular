@@ -7,10 +7,13 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AuthService } from './services/auth.service';
 import { SignupComponent } from './components/signup/signup.component';
+import { TravelcardService } from './services/travelcard.service';
 
 //routes
 import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
+import { NewTravelcardComponent } from './components/new-travelcard/new-travelcard.component';
+import { TravelcardsComponent } from './components/travelcards/travelcards.component';
 
 
 
@@ -18,7 +21,9 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    NewTravelcardComponent,
+    TravelcardsComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +31,7 @@ import { AppRoutingModule } from './app-routing.module';
     HttpModule,
     FormsModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, TravelcardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

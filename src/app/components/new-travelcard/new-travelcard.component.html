@@ -1,0 +1,21 @@
+<h3>Add a new travelcard</h3>
+  <p *ngIf="saveError" class="error">
+    {{ saveError }}
+  </p>
+
+<form (ngSubmit)="saveNewTravelCard()">
+
+  <label for="number-input"> WhatsApp Number </label>
+  <input id="number-input" type="text" placeholder="number" [(ngModel)]="travelCardData.number" name="number" required>
+  <br>
+
+  <label for="social-media-input"> Social Media </label>
+  <input id="social-media-input" type="text" placeholder="Social Media" [(ngModel)]="travelCardData.socialMedia" name="socialMedia">
+  <br>
+
+  <label for="travel-plan-input"> Travel Plan </label>
+  <input id="travel-plan-input" type="text" [(ngModel)]="travelCardDara.travelPlan" name="travelPlan">
+  <br>
+
+  <button> Save Travelcard </button>
+</form>
