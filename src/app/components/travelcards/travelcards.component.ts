@@ -26,7 +26,7 @@ export class TravelcardsComponent implements OnInit {
       .then(resultFromApi => {
         this.currentUser = resultFromApi;
         console.log('user is: ', resultFromApi);
-        this.getTheTravelcards()
+        this.getTheTravelCards()
       })
 
       .catch(err => {
