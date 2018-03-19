@@ -9,7 +9,7 @@ export class TravelcardService {
   constructor(private myHttp: Http) { }
 
   getAllTravelCards(){
-    return this.myHttp.get(`${environment.apiBase}api/travelcards`,
+    return this.myHttp.get(`${environment.apiBase}/api/travelcards`,
   { withCredentials: true})
   .map(res => res.json())
   }
@@ -25,7 +25,7 @@ export class TravelcardService {
 
   createNewTravelCard(travelCardData){
     return this.myHttp
-    .post(`${environment.apiBase}/api/travelcards`, travelCardData,
+    .post(`${environment.apiBase}/api/travelcards/new`, travelCardData,
     { withCredentials: true })
     .toPromise()
     .then(res => res.json());

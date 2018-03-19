@@ -38,6 +38,7 @@ export class TravelcardsComponent implements OnInit {
   getTheTravelCards() {
     this.myTravelcardService.getAllTravelCards()
     .subscribe(allTravelCards => {
+      console.log(allTravelCards)
       this.travelCards = allTravelCards;
       console.log('travelCards', this.travelCards)
     },

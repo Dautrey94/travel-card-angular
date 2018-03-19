@@ -34,17 +34,18 @@ export class NewTravelcardComponent implements OnInit {
         });
   }
 
-  saveNewtravelCard(){
+  saveNewTravelCard(){
     this.myTravelcardService.createNewTravelCard(this.travelCardData)
-    .then(res => {
+    .then(newTravelCard => {
       this.travelCardData ={
         number: '',
         socialMedia: '',
         travelPlan: ''
       }
+      this.saveError = "";
       this.myRouter.navigate(['/travelcards'])
     })
     .catch(err => {this.saveError = 'saving error'})
-  }
+  };
 
 }
