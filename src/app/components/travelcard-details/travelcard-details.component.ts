@@ -12,7 +12,7 @@ import { environment } from '../../../environments/environment';
 export class TravelcardDetailsComponent implements OnInit {
   travelcard = <any>{}
   currentUser = <any>{}
-
+  show: boolean = true;
   baseUrl = environment.apiBase;
   updatedTravelCardNum: String;
   updatedTravelCardSocial: String;
@@ -52,14 +52,24 @@ export class TravelcardDetailsComponent implements OnInit {
     .catch
   }
 
+  showForm(){
+    this.show = !this.show;
+  }
+
+
+
   doTheUpdate(id, formData) {
     this.myTravelcardService.updateTravelCard(id, formData)
 
     const formInfo = formData.form.controls
     this.updatedTravelCardNum = formInfo.travelCardNum.value;
+    console.log("updated number", this.updatedTravelCardNum)
     this.updatedTravelCardSocial = formInfo.travelCardSocial.value;
+    console.log("updated social", this.updatedTravelCardSocial)
     this.updatedTravelPlan = formInfo.travelPlan.value;
+    console.log("updated plan", this.updatedTravelPlan)
     this.sendUpdatesToApi(id)
+    this.show = true;
   }
 
   sendUpdatesToApi(id){
@@ -68,10 +78,11 @@ export class TravelcardDetailsComponent implements OnInit {
       travelCardSocial: this.updatedTravelCardSocial,
       travelPlan: this.updatedTravelPlan
     }
+    console.log("updated all: ", this.updatedTravelCard)
     this.myTravelcardService.updateTravelCard(id,this.updatedTravelCard)
     .toPromise()
     .then(res => {
-      this.myRouter.navigate(['/travelcards]'])
+      this.myRouter.navigate(['/travelcards'])
     })
     .catch(err => {
       console.log("Error update", err)
@@ -79,7 +90,7 @@ export class TravelcardDetailsComponent implements OnInit {
 
 }
 
-deleteThisTravelCard(){
+deleteTravelCard(){
   if(!confirm("Are you sure?")){
     return;
   }

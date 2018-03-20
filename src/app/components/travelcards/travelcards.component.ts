@@ -12,7 +12,7 @@ export class TravelcardsComponent implements OnInit {
   logoutError: string;
   travelCardListError: string;
   travelCards: any;
-  currentUser: string;
+  currentUser:any = {};
 
   constructor(
     private myAuthService: AuthService,
@@ -25,10 +25,9 @@ export class TravelcardsComponent implements OnInit {
       .checklogin()
       .then(resultFromApi => {
         this.currentUser = resultFromApi;
-        console.log('user is: ', resultFromApi);
+        console.log('user id: ', this.currentUser._id);
         this.getTheTravelCards()
       })
-
       .catch(err => {
         console.log(err);
         this.myRouter.navigate(['/']);
@@ -43,10 +42,23 @@ export class TravelcardsComponent implements OnInit {
       console.log('travelCards', this.travelCards)
     },
   () => {
-      this.travelCardListError = "no travelcards,";
+      this.travelCardListError = "no travelcards :)";
     }
   );
 };
+
+addTheCard(userId, cardId){
+ this.myTravelcardService.sendTheCard(userId, cardId)
+  .then( res => {
+    console.log("res from sending the data is: ", res)
+  })
+  .catch( err => {
+    console.log('err is: ', err)
+  } )
+}
+
+
+
 
   logMeOutPls() {
     this.myAuthService
