@@ -30,5 +30,16 @@ export class TravelcardService {
     .toPromise()
     .then(res => res.json());
   }
+  
+  updateTravelCard(id, updates){
+    return this.myHttp.put(`${environment.apiBase}/api/travelcards/${id}`, updates,
+     { withCredentials: true })
+     .map(res => res.json());
+  }
 
+  deleteTravelCard(id){
+    return this.myHttp.delete(`${environment.apiBase}/api/travelcards/${id}`,
+        { withCredentials: true })
+        .toPromise()
+  }
 }

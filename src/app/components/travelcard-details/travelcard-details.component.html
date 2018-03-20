@@ -1,3 +1,25 @@
+
+
+<div *ngIf="currentUser._id === travelcard.owner">
+  <button *ngIf="travelcard._id" (click)="deleteTravelCard()">Delete</button>
+</div>
+
 <strong>{{ travelcard.number }}</strong>
 <p>{{ travelcard.number }}</p>
-<!-- <img [src]="baseUrl+phone.image" alt=""> -->
+
+<div>
+  <a [routerLink]="['/travelcards']">Take me back to list</a>
+</div>
+
+
+<div *ngIf="currentUser._id === travelcard.owner">
+  <form (ngSubmit)="doTheUpdate(travelcard._id, myForm)" #myForm="ngForm" >
+
+    <label for="travelcard-number-input"> Number </label> 
+    <input id="travelcard-number-input" type="text"  [(ngModel)]="travelcard.number" name="travelCardNum" value="{{ travelcard.number }}">
+    <br>
+
+
+    <button type="submit">Save updates</button>
+  </form>
+</div>
