@@ -22,8 +22,8 @@ export class TravelcardService {
   }
 
   sendTheCard(userId, dataToSend){
-    console.log("data from service:", dataToSend)
-    console.log("user from service:", userId)
+    // console.log("data from service:", dataToSend)
+    // console.log("user from service:", userId)
 // cardId is just the number so I couldn't access to it in my backend
 // that's why i created an empty object and gave it key "theId"
     var reqBody: any = {};
@@ -32,6 +32,7 @@ export class TravelcardService {
 
     return this.myHttp.post(`${environment.apiBase}/api/user/${userId}/addCards`, reqBody, { withCredentials: true })
     .toPromise()
+    .then(res => res.json())
 
   }
 

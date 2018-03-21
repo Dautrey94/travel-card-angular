@@ -13,7 +13,7 @@ export class TravelcardsComponent implements OnInit {
   travelCardListError: string;
   travelCards: any;
   currentUser:any = {};
-
+  isAdded: boolean = true;
   constructor(
     private myAuthService: AuthService,
     private myRouter: Router,
@@ -39,7 +39,7 @@ export class TravelcardsComponent implements OnInit {
     .subscribe(allTravelCards => {
       console.log(allTravelCards)
       this.travelCards = allTravelCards;
-      console.log('travelCards', this.travelCards)
+      console.log('travelCards ========================', this.travelCards[0].number)
     },
   () => {
       this.travelCardListError = "no travelcards :)";
@@ -49,16 +49,15 @@ export class TravelcardsComponent implements OnInit {
 
 addTheCard(userId, cardId){
  this.myTravelcardService.sendTheCard(userId, cardId)
-  .then( res => {
+  .then(res => {
+    console.log("=============================", this.isAdded)
+    this.isAdded = false;
     console.log("res from sending the data is: ", res)
   })
   .catch( err => {
     console.log('err is: ', err)
   } )
 }
-
-
-
 
   logMeOutPls() {
     this.myAuthService

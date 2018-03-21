@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NewTravelcardComponent } from './components/new-travelcard/new-travelcard.component';
 import { TravelcardsComponent } from './components/travelcards/travelcards.component';
 import { TravelcardDetailsComponent } from './components/travelcard-details/travelcard-details.component';
+import { UserComponent } from './components/user/user.component';
 
 
 
@@ -25,7 +26,8 @@ import { TravelcardDetailsComponent } from './components/travelcard-details/trav
     SignupComponent,
     NewTravelcardComponent,
     TravelcardsComponent,
-    TravelcardDetailsComponent
+    TravelcardDetailsComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

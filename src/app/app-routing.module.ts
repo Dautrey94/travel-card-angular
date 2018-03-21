@@ -5,6 +5,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { NewTravelcardComponent } from './components/new-travelcard/new-travelcard.component';
 import { TravelcardsComponent } from './components/travelcards/travelcards.component';
 import { TravelcardDetailsComponent } from './components/travelcard-details/travelcard-details.component';
+import { UserComponent } from './components/user/user.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,10 @@ const routes: Routes = [
     {
         path: 'travelcards/:id',
         component: TravelcardDetailsComponent
+    },
+    {
+        path: 'user/:id',
+        component: UserComponent
     }
 ]
 
