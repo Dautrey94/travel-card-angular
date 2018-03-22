@@ -1,4 +1,4 @@
-<h3> Sign Up </h3>
+<!-- <h3> Sign Up </h3>
 
 <p *ngIf="errorMessage" class="error">
   {{ errorMessage }}
@@ -16,9 +16,58 @@
 
   <button> Sign Up </button>
 </div>
-</form>
+</form> -->
 
-<p>Already have account?
+<!-- <p>Already have account?
   <a [routerLink]="['/']">Log In</a>
-</p>
+</p> -->
 
+<div class="container">
+    <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-login">
+          <h3> Sign Up </h3>
+        <div class="panel-heading">
+          <div class="row">
+          </div>
+          <hr>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-12">
+                <p *ngIf="errorMessage" class="error">
+                    {{ errorMessage }}
+                  </p>
+                  <form (ngSubmit)="doSignUp()">
+                <div class="form-group">
+                  <label for="username-input"> Username</label>
+                  <input id="username-input" tabindex="1" class="form-control" type="text" placeholder="blah" [(ngModel)]="signUpInfo.username" name="usernameValue">
+                </div>
+                <div class="form-group">
+                  <label for="password-input"> Password </label>
+                  <input id="password-input" tabindex="1" class="form-control" type="password" placeholder="*****" [(ngModel)]="signUpInfo.password" name="passwordValue">
+                </div>             
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                      <input type="submit" name="signup-submit" id="signup-submit" tabindex="4" class="form-control btn btn-login" value="Sign Up">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="text-center">
+                          <p>Already have account?<a [routerLink]="['/']">Log In</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

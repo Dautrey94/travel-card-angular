@@ -1,20 +1,20 @@
 <div *ngIf="currentUser">
-  <header>
-    <p> Hello, {{ currentUser.username }}. </p>
-    <a [routerLink]="['/new-travelcard']">Add a new travelcard</a>
-    <a [routerLink]="['/user', currentUser._id]">Profile</a>
-    <button (click)="logMeOutPls()"> Log Out </button>
-    <p *ngIf="logoutError" class="error">
-      {{ logoutError }}
-    </p>
-  </header>
-  <h2>travelcard List</h2>
-
-  <div *ngFor="let travelcard of travelCards">
-    <a [routerLink]="['/travelcards/' + travelcard._id]">{{travelcard.number}} - </a>{{ travelcard.owner.username }}
-    
-    <div *ngIf=" currentUser._id !== travelcard.owner._id"> 
-      <button *ngIf="isAdded"   (click) = "addTheCard(currentUser._id, travelcard._id)">Add this card</button>
+    <header>
+      <p> Hello, {{ currentUser.username }}. </p>
+      <a [routerLink]="['/new-travelcard']">Add a new travelcard</a>
+      <a [routerLink]="['/user', currentUser._id]">Profile</a>
+      <button (click)="logMeOutPls()"> Log Out </button>
+      <p *ngIf="logoutError" class="error">
+        {{ logoutError }}
+      </p>
+    </header>
+    <h2>travelcard List</h2>
+  
+    <div *ngFor="let travelcard of travelCards">
+      <a [routerLink]="['/travelcards/' + travelcard._id]">{{travelcard.number}} - </a>{{ travelcard.owner.username }}
+      
+      <div *ngIf=" currentUser._id !== travelcard.owner._id"> 
+        <button *ngIf="isAdded"   (click) = "addTheCard(currentUser._id, travelcard._id)">Add this card</button>
+      </div>
     </div>
   </div>
-</div>

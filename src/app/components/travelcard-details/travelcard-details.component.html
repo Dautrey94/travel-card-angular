@@ -1,33 +1,32 @@
-
 <div *ngIf="currentUser._id === travelcard.owner">
-  <button *ngIf="travelcard._id" (click)="deleteTravelCard()">Delete</button>
-</div>
-
-<strong>{{ travelcard.number }}</strong>
-<p>social: {{ travelcard.socialMedia }}</p>
-<p>travel plan:{{ travelcard.travelPlan }}</p>
-
-
-
-<div>
-  <a [routerLink]="['/travelcards']">Take me back to list</a>
-</div>
-
-
-<div *ngIf="currentUser._id === travelcard.owner">
-  <button (click) ="showForm()">Update</button>
-  <form (ngSubmit)="doTheUpdate(travelcard._id, myForm)" #myForm="ngForm" [hidden]="show">
-
-    <label for="travelcard-number-input"> Number </label> 
-    <input id="travelcard-number-input" type="text"  [(ngModel)]="travelcard.number" name="travelCardNum" value="{{ travelcard.number }}">
-    <br>
-    <label for="travelcard-social-input"> Social media </label> 
-    <input id="travelcard-social-input" type="text"  [(ngModel)]="travelcard.socialMedia" name="travelCardSocial" value="{{ travelcard.socialMedia }}">
-    <br>
-    <label for="travelcard-plan-input"> Travel card </label> 
-    <input id="travelcard-plan-input" type="text"  [(ngModel)]="travelcard.travelPlan" name="travelPlan" value="{{ travelcard.travelPlan }}">
-    <br>
-
-    <button type="submit">Save updates</button>
-  </form>
-</div>
+    <button *ngIf="travelcard._id" (click)="deleteTravelCard()">Delete</button>
+  </div>
+  
+  <strong>{{ travelcard.number }}</strong>
+  <p>social: {{ travelcard.socialMedia }}</p>
+  <p>travel plan:{{ travelcard.travelPlan }}</p>
+  
+  
+  
+  <div>
+    <a [routerLink]="['/travelcards']">Take me back to list</a>
+  </div>
+  
+  
+  <div *ngIf="currentUser._id === travelcard.owner">
+    <button (click) ="showForm()">Update</button>
+    <form (ngSubmit)="doTheUpdate(travelcard._id, myForm)" #myForm="ngForm" [hidden]="show">
+  
+      <label for="travelcard-number-input"> Number </label> 
+      <input id="travelcard-number-input" type="text"  [(ngModel)]="travelcard.number" name="travelCardNum" value="{{ travelcard.number }}">
+      <br>
+      <label for="travelcard-social-input"> Social media </label> 
+      <input id="travelcard-social-input" type="text"  [(ngModel)]="travelcard.socialMedia" name="travelCardSocial" value="{{ travelcard.socialMedia }}">
+      <br>
+      <label for="travelcard-plan-input"> Travel card </label> 
+      <input id="travelcard-plan-input" type="text"  [(ngModel)]="travelcard.travelPlan" name="travelPlan" value="{{ travelcard.travelPlan }}">
+      <br>
+  
+      <button type="submit">Save updates</button>
+    </form>
+  </div>
