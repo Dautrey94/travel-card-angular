@@ -1,76 +1,26 @@
-.auth {
-    border: 1px solid black;
-    border-radius: 30px;
-    /* width: 220px; */
-    /* height: px; */
-    margin-top: 40px;
-    margin-bottom: 50px
-}
-
-.home-bg {
-    /* background-image: url("https://www.walldevil.com/wallpapers/w01/418625-abstract-geometric-gradient.jpg"); */
-    
+.bg {
+    background-image: url("https://cdn.pixabay.com/photo/2017/06/14/08/20/map-of-the-world-2401458_1280.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
-    height: 600px;
-}
-
-.button {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    text-decoration: none;
-    background-color:#35e27d;
-    color: white;
-    font-size: 25px;
-    padding: 10px 24px;
-    border-radius: 4px;
-    text-align: center;
-    
-}
-
-.button1 {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    text-decoration: none;
-    background-color:#35a8dd;
-    color: white;
-    font-size: 25px;
-    padding: 10px 24px;
-    border-radius: 4px;
-    text-align: center;
-}
-
-.buttons {
-    margin: 0px auto;
-    width: 250px;
-    margin-top: 415px
-}
-
-.bg{
-    background-image: url("http://www.freeiconspng.com/uploads/world-map-image-21.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.bulletborder {
-    border: 1px solid black;
-    border-radius: 30px;
-    width: 220px; 
-    height: 50px;
-}
-
-.login-text{
-    color: white;
+    height: 670px;
 }
 
 .brand{
     font-family: 'Amatic SC', cursive;
-    font-size: 30px;
-    color:white;
-    margin-left: 20px;
-    margin-top: 20px;
-    margin-right: 20px;
+    font-size: 75px;
+    color: white;
+    margin-left: 50px;
+    padding-top: 40px
 }
 
+.index-writing {
+    color: black;
+    font-family: 'Play', sans-serif;;
+    font-size: 40px;
+    width: 700px;
+    margin-left: 100px;
+    padding-top: 100p;
+  }
 
 
 

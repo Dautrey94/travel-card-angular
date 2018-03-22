@@ -13,6 +13,7 @@
     <div *ngFor="let travelcard of travelCards">
       <a [routerLink]="['/travelcards/' + travelcard._id]">{{travelcard.number}} - </a>{{ travelcard.owner.username }}
       
+      
       <div *ngIf=" currentUser._id !== travelcard.owner._id"> 
         <button *ngIf="isAdded"   (click) = "addTheCard(currentUser._id, travelcard._id)">Add this card</button>
       </div>

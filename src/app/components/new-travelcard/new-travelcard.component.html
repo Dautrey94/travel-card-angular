@@ -1,21 +1,75 @@
-<h3>Add a new travelcard</h3>
-  <p *ngIf="saveError" class="error">
+<!-- <h3>Add a new travelcard</h3> -->
+  <!-- <p *ngIf="saveError" class="error">
     {{ saveError }}
-  </p>
+  </p> -->
 
-<form (ngSubmit)="saveNewTravelCard()">
+<!-- <form (ngSubmit)="saveNewTravelCard()"> -->
 
-  <label for="number-input"> WhatsApp Number </label>
+  <!-- <label for="number-input"> WhatsApp Number </label>
   <input id="number-input" type="text" placeholder="number" [(ngModel)]="travelCardData.number" name="number" required>
-  <br>
+  <br> -->
 
-  <label for="social-media-input"> Social Media </label>
+  <!-- <label for="social-media-input"> Social Media </label>
   <input id="social-media-input" type="text" placeholder="Social Media" [(ngModel)]="travelCardData.socialMedia" name="socialMedia">
-  <br>
+  <br> -->
 
-  <label for="travel-plan-input"> Travel Plan </label>
+  <!-- <label for="travel-plan-input"> Travel Plan </label>
   <input id="travel-plan-input" type="text" [(ngModel)]="travelCardData.travelPlan" name="travelPlan">
-  <br>
+  <br> -->
 
-  <button> Save Travelcard </button>
-</form>
+  <!-- <button> Save Travelcard </button>
+</form> -->
+
+
+<div class="container">
+    <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-login">
+          <h3>Add a new travelcard</h3>
+        <div class="panel-heading">
+          <div class="row">
+          </div>
+          <hr>
+        </div>
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-lg-12">
+                <p *ngIf="saveError" class="error">
+                    {{ saveError }}
+                  </p>
+                  <form (ngSubmit)="saveNewTravelCard()">
+                <div class="form-group">
+                  <!-- <label for="login-username-input"> Username </label>
+                    <input id="login-username-input" tabindex="1" class="form-control" type="text" placeholder="*****" [(ngModel)]="loginInfo.username" name="loginUsername"> -->
+                    <label for="number-input"> WhatsApp Number </label>
+                    <input id="number-input" tabindex="1" class="form-control" type="text" placeholder="number" [(ngModel)]="travelCardData.number" name="number" required>
+                </div>
+                <div class="form-group">
+                    <label for="social-media-input"> Social Media </label>
+                    <input id="social-media-input" tabindex="1" class="form-control" type="text" placeholder="Social Media" [(ngModel)]="travelCardData.socialMedia" name="socialMedia">
+                </div>  
+                <div class="form-group">
+                    <label for="travel-plan-input"> Travel Plan </label>
+                    <input id="travel-plan-input" tabindex="1" class="form-control" type="text" placeholder="Travel Plan" [(ngModel)]="travelCardData.travelPlan" name="travelPlan">        
+                </div>             
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                      <input type="submit" name="save-travelcard-submit" id="save-travelcard-submit" tabindex="4" class="form-control btn btn-login" value="Save Travelcard">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="row">
+                    <div class="col-lg-12">
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
