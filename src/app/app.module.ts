@@ -16,6 +16,7 @@ import { NewTravelcardComponent } from './components/new-travelcard/new-travelca
 import { TravelcardsComponent } from './components/travelcards/travelcards.component';
 import { TravelcardDetailsComponent } from './components/travelcard-details/travelcard-details.component';
 import { UserComponent } from './components/user/user.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -27,7 +28,8 @@ import { UserComponent } from './components/user/user.component';
     NewTravelcardComponent,
     TravelcardsComponent,
     TravelcardDetailsComponent,
-    UserComponent
+    UserComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

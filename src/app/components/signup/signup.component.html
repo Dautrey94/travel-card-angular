@@ -5,7 +5,7 @@
 </p>
 
 <form (ngSubmit)="doSignUp()">
-
+    <div class ="form-group">
   <label for="username-input"> Username</label>
   <input id="username-input" type="text" placeholder="blah" [(ngModel)]="signUpInfo.username" name="usernameValue">
   <br>
@@ -15,7 +15,9 @@
   <br>
 
   <button> Sign Up </button>
+</div>
 </form>
+
 <p>Already have account?
   <a [routerLink]="['/']">Log In</a>
 </p>
